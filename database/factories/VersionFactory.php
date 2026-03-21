@@ -15,7 +15,7 @@ class VersionFactory extends Factory
      * Define the model's default state.
      *
      * @return array<string, mixed>
-    */
+     */
     public function definition(): array
     {
         return [
@@ -24,6 +24,7 @@ class VersionFactory extends Factory
             'minor' => $this->faker->numberBetween(0, 10),
             'patch' => $this->faker->numberBetween(0, 20),
             'suffix' => $this->faker->optional()->lexify('beta-?'),
+            'shasum' => $this->faker->sha1(),
         ];
     }
 }

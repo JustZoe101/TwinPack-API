@@ -12,7 +12,11 @@ class Version extends Model
 
     protected $fillable = [
         'package_id',
-        'version',
+        'major',
+        'minor',
+        'patch',
+        'suffix',
+        'shasum',
     ];
 
     /**
@@ -21,5 +25,15 @@ class Version extends Model
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
+    }
+
+    public function versionString(): string
+    {
+        $version = "{$this->major}.{$this->minor}.{$this->patch}";
+        if ($this->suffix) {
+            $version .= "-{$this->suffix}";
+        }
+
+        return $version;
     }
 }

@@ -21,7 +21,7 @@ class PackageFactory extends Factory
         return [
             'slug' => $this->faker->slug(),
             'name' => $this->faker->word(),
-            'description' => $this->faker->sentence(),
+            'description' => $this->faker->realText(),
             'path' => $this->faker->filePath(),
             'manager' => $this->faker->randomElement(ManagerEnum::cases()),
         ];

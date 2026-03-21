@@ -18,6 +18,11 @@ class PackageSeeder extends Seeder
 
             Version::factory(10)
                 ->for($package)
+                ->afterCreating(function (Version $version) {
+                    // Simulate different update times for versions
+                    $version->updated_at = now()->subDays(rand(0, 30))->subMinutes(rand(0, 1440));
+                    $version->save();
+                })
                 ->create();
         }
     }

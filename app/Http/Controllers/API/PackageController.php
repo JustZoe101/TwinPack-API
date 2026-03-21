@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Data\PackageData;
+use App\Http\Data\PackageData;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
 use Spatie\LaravelData\PaginatedDataCollection;

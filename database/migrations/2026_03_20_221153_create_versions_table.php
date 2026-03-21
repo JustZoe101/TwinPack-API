@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('minor')->default(0);
             $table->unsignedInteger('patch')->default(0);
             $table->string('suffix')->nullable();
+            $table->string('shasum');
             $table->timestamps();
             $table->softDeletes();
         });

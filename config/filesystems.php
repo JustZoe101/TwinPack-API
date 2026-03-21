@@ -31,7 +31,7 @@ return [
     'disks' => [
         'packages' => [
             'driver' => 'local',
-            'root' => storage_path('packages'),
+            'root' => storage_path('app\packages'),
             'throw' => true,
         ],
 
