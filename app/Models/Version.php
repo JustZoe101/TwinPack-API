@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Database\Factories\VersionFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Version extends Model
 {
+    /** @use HasFactory<VersionFactory> */
     use HasFactory;
 
     protected $fillable = [

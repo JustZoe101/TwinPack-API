@@ -4,12 +4,14 @@ namespace App\Models;
 
 use App\Enums\ManagerEnum;
 use Carbon\Carbon;
+use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Package extends Model
 {
+    /** @use HasFactory<PackageFactory> */
     use HasFactory;
 
     protected $fillable = [
