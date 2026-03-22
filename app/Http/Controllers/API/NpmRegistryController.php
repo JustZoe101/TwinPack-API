@@ -47,6 +47,9 @@ class NpmRegistryController extends Controller
                 'minor' => $semver[1] ?? 0,
                 'patch' => $semver[2] ?? 0,
                 'suffix' => $suffix,
+            ],
+            [
+                'shasum' => $request->dist['shasum'] ?? sha1(base64_decode($request->dist['data'] ?? '')),
             ]
         );
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Data\Composer\ShowData;
+use App\Jobs\DownloadRepoJob;
 use App\Models\Package;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -42,7 +43,7 @@ class ComposerRegistryController extends Controller
             ]
         );
 
-        // TODO: Optionally dispatch a job to fetch the repo, parse composer.json, and create versions
+        DownloadRepoJob::dispatch($package, $repoUrl);
 
         return response()->json(['ok' => 'package submitted', 'slug' => $slug], 201);
     }
